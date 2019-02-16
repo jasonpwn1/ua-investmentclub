@@ -1,3 +1,13 @@
+// 1. Work on updating SQL database with new stock datas
+// 2. Finish Total summary historic prices
+// 3. Add benchmark functionality
+// 4. Add News page
+// 5. Publish and host website
+// 6. Add password protection to buy/Sell
+// 7. Add graphing scale functionality
+
+
+var port = process.env.PORT || 1337;
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser');
@@ -10,8 +20,8 @@ app.set('view engine', 'ejs')
 app.get('/', function (req, res) {
   res.render('index');
 });
-
-app.listen(3000, function () {
+//was 3000
+app.listen(port, function () {
   console.log('Example app listening on port 3000!')
 });
 
