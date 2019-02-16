@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>UA Investment Club</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <div class="bar-header">
+      <h1>UA Investment Club</h1>
+    </div>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/transaction">Transaction</a></li>
+      <li><a href="/news">News</a></li>
+      <li><a href="/holdings">Holdings</a></li>
+    </ul>
+    <div class="container">
+      <fieldset>
+        <form action="/sell-transaction" method="post">
+          <input name="sell_password" type="password" class="ghost-input" placeholder="Enter Selling Password" required>
+          <input name="ticker" type="text" class="ghost-input" placeholder="Enter Stock Ticker" required>
+          <input name="shares" type="number" class="ghost-input" placeholder="Enter Total Shares Owned After Sale" required>
+          <input name="cost" type="number" class="ghost-input" placeholder="Enter Total Cost of Position After Sale" required>
+          <input type="submit" class="ghost-button" value="Sell Security">
+        </form>
+      </fieldset>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>UA Investment Club</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <div class="bar-header">
+      <h1>UA Investment Club</h1>
+    </div>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/transaction">Transaction</a></li>
+      <li><a href="/news">News</a></li>
+      <li><a href="/holdings">Holdings</a></li>
+    </ul>
+    <div class="container">
+      <fieldset id="buy">
+        <form action="/buy-transaction" method="post">
+          <input name="buy_password" type="password" class="ghost-input" placeholder="Enter Buying Password" required>
+          <input name="security_name" type="text" class="ghost-input" placeholder="Enter Full Security Name" required>
+          <input name="ticker" type="text" class="ghost-input" placeholder="Enter Stock Ticker" required>
+          <select name="sector" class="ghost-input">
+            <option value="SPY_ETF">SPY Exchange Traded Fund</option>
+            <option value="CONSUMER_DISCRETIONARY">Consumer Discretionary</option>
+            <option value="CONSUMER_STAPLES">Consumer Staples</option>
+            <option value="ENERGY">Energy</option>
+            <option value="FINANCIALS">Financials</option>
+            <option value="HEALTHCARE">Healthcare</option>
+            <option value="INDUSTRIALS">Industrials</option>
+            <option value="INFORMATION_TECHNOLOGY">Information Technology</option>
+            <option value="MATERIALS">Materials</option>
+            <option value="REAL_ESTATE">Real Estate</option>
+            <option value="UTILITIES">Utilities</option>
+            <option value="EMERGING_EQUITIES">Emerging Equities</option>
+            <option value="US_BONDS">United States' Bonds</option>
+            <option value="EMERGING_BONDS">Emerging Bonds</option>
+          </select>
+          <input name="shares" type="number" class="ghost-input" placeholder="Enter Total Shares Owned" required>
+          <input name="cost" type="number" class="ghost-input" placeholder="Enter Total Cost of Position" required>
+          <input type="submit" class="ghost-button" value="Buy Security">
+        </form>
+      </fieldset>
+    </div>
+  </body>
+</html>

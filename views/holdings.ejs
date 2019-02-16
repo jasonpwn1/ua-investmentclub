@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>UA Investment Club</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+  </head>
+
+  <body>
+    <div class="bar-header">
+      <h1>UA Investment Club</h1>
+    </div>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/transaction">Transaction</a></li>
+      <li><a href="/news">News</a></li>
+      <li><a href="/holdings">Holdings</a></li>
+    </ul>
+    <div class="container">
+      <table>
+        <tr>
+          <th>Security Name</th>
+          <th>Ticker</th>
+          <th>Sector</th>
+          <th>Shares Owned</th>
+          <th>Purchase Price</th>
+          <th>Current Price</th>
+          <th>Cost of Position</th>
+          <th>Market Value of Position</th>
+          <th>Holding Period Return</th>
+        </tr>
+        <% for(let i = 0; i < datas.length; i++) { %>
+          <tr>
+            <td><%= datas[i].security_name %></td>
+            <td><%= datas[i].ticker %></td>
+            <td><%= datas[i].sector %></td>
+            <td><%= datas[i].shares %></td>
+            <td><%= datas[i].purchase_price %></td>
+            <td><%= datas[i].current_price %></td>
+            <td><%= datas[i].cost %></td>
+            <td><%= datas[i].market_value %></td>
+            <td><%= datas[i].hp_return %></td>
+          </tr>
+        <% } %>
+      </table>
+    </div>
+    <form action="/graph" method="post">
+      <div>
+        <h2>Select Securities from Below to Graph</h2>
+        <ul id="stock_list">
+          <% for (let i = 0; i < stock_list.length; i++) { %>
+            <input type="checkbox" name=<%=stock_list[i].ticker %> value=<%=stock_list[i].ticker %>> <%=stock_list[i].ticker%><br>
+          <% } %>
+        </ul>
+      </div>
+      <input type="checkbox" name="UAIC_TOTAL">UAIC Total<br>
+      <!-- <div>
+        <ul id="summary_list">
+          <% for (let i = 0; i < stock_list.length; i++) { %>
+            <input type="checkbox" name=<%=stock_list[i].ticker %> value=<%=stock_list[i].ticker %>> <%=stock_list[i].ticker%><br>
+          <% } %>
+        </ul>
+      </div> -->
+      <input type="submit" class="ghost-button" value="Graph">
+    </form>
+  </body>
+</html>
